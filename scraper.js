@@ -30,7 +30,6 @@ function getArtistEvents() {
     });
     console.log(artist_events)
     return artist_events
-    debugger;
   })
   .catch(console.error)
 }

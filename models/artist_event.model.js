@@ -6,10 +6,10 @@ class ArtistEvent {
     this.event_href = event_href;
   }
 
-  static createArtistEvents(artistEventsObject){
-    let keys = Object.keys(artistEventsObject)
+  static createArtistEvents(artistEventsData){
+    let keys = Object.keys(artistEventsData)
     keys.forEach(key => {
-      let artist_event_obj = artistEventsObject[key]
+      let artist_event_obj = artistEventsData[key]
       ArtistEvent.create(artist_event_obj)
     })
   }
@@ -21,15 +21,6 @@ class ArtistEvent {
     return artist_event
   }
 
-  static displayArtistEvents(){
-    ArtistEvent.all.forEach(artist_event => artist_event.display())
-  }
-
-  display() {
-    let p = `${this.artist_name} ${this.event_href}`
-    console.log(p)
-  }
-
 }
 
-module.export = ArtistEvent;
+module.exports = ArtistEvent;
