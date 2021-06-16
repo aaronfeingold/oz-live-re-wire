@@ -12,6 +12,8 @@ class ArtistEvent {
       let artist_event_obj = artistEventsData[key]
       ArtistEvent.create(artist_event_obj)
     })
+
+    return ArtistEvent.all
   }
 
   static create(ae_obj) {

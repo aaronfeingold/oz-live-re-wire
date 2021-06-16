@@ -34,11 +34,9 @@ const getArtistEvents = async () => {
     return artist_events
   })
   .then(artist_events => {
-    ArtistEvent.createArtistEvents(artist_events)
-    const artistEvents = ArtistEvent.all
-    
-    console.log(artistEvents)
-    return artistEvents
+    let aes = JSON.stringify(ArtistEvent.createArtistEvents(artist_events))
+    debugger;
+    return aes
   })
   .catch(console.error)
 }
