@@ -7,5 +7,5 @@ module.exports = (app, router) => {
     res.send(artist_events)
   });
 
-  app.use('/api/artist_events', router)
+  app.use('/api/artist-events', router)
 }

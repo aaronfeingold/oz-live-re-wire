@@ -14,11 +14,11 @@ class ArtistEvent {
     })
   }
 
-  static create(data) {
-    let artist_event = new ArtistEvent(data["artist_name"], data["event_href"])
-    ArtistEvent.all.push(artist_event)
+  static create(ae_obj) {
+    let ae = new ArtistEvent(ae_obj["artist_name"], ae_obj["event_href"])
+    ArtistEvent.all.push(ae)
 
-    return artist_event
+    return ae
   }
 
 }
