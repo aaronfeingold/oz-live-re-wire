@@ -1,6 +1,6 @@
 const cheerio = require("cheerio");
 const puppeteer = require('puppeteer')
-const ArtistEvent = require('./models/artist_event.model')
+const ArtistEvent = require('../models/artist_event.model')
 
 const url = 'https://www.wwoz.org/calendar/livewire-music'
 const config = {

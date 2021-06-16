@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const getArtistEvents = require('../scraper.js')
+const getArtistEvents = require('../controllers/index.js')
 const ArtistEvent = require('../models/artist_event.model')
 
 /* GET home page. */
