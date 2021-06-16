@@ -16,7 +16,7 @@ const getArtistEvents = async () => {
     await page.goto(url, config);
     return await page.content();
   })
-  .then(html =>{
+  .then(html => {
     const $ = cheerio.load(html);
     const links = $('a');
     const artist_events = {}
@@ -30,11 +30,14 @@ const getArtistEvents = async () => {
           artist_events[i] = artist_event
         }
     });
-    console.log(artist_events)
 
+    return artist_events
+  })
+  .then(artist_events => {
     ArtistEvent.createArtistEvents(artist_events)
     const artistEvents = ArtistEvent.all
     
+    console.log(artistEvents)
     return artistEvents
   })
   .catch(console.error)
