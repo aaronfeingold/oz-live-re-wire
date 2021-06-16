@@ -19,8 +19,6 @@ class ArtistEvent {
   static create(ae_obj) {
     let ae = new ArtistEvent(ae_obj["artist_name"], ae_obj["event_href"])
     ArtistEvent.all.push(ae)
-
-    return ae
   }
 
 }
