@@ -7,6 +7,7 @@ const config = {
   headers: {'Access-Control-Allow-Origin': '*'}
 }
 
+// scrapper function
 const getArtistEvents = async () => {
  puppeteer
   .launch()
@@ -39,5 +40,9 @@ const getArtistEvents = async () => {
   .catch(console.error)
 }
 
+const artistEventsController = {
+  getArtistEvents: getArtistEvents()
+}
 
-module.exports = getArtistEvents;
+
+module.exports = artistEventsController;

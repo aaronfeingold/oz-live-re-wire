@@ -2,16 +2,13 @@ var express = require('express');
 var bodyParser = require('body-parser')
 var cors = require('cors')
 
-var indexRouter = require('./app/routes/index');
-
-
 var app = express();
 
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/', indexRouter);
+require('./app/routes/artist_event.routes')(app)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
