@@ -8,7 +8,6 @@ const config = {
 }
 
 const getArtistEvents = async () => {
-
  puppeteer
   .launch()
   .then(browser => browser.newPage())
@@ -40,5 +39,5 @@ const getArtistEvents = async () => {
   .catch(console.error)
 }
 
-getArtistEvents()
-// module.exports = getArtistEvents;
+
+module.exports = getArtistEvents;

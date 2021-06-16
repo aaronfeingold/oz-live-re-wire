@@ -4,12 +4,8 @@ const getArtistEvents = require('../controllers/index.js')
 const ArtistEvent = require('../models/artist_event.model')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  const result = () =>{
-    await getArtistEvents();
-  }
-  ArtistEvent.createArtistEvents(result)
-  let artist_events = ArtistEvent.all
+router.get('/', async function(req, res, next) {
+  const artist_events = await getArtistEvents()
   res.render('index', artist_events)
 });
 
