@@ -40,9 +40,5 @@ const getArtistEvents = async () => {
   .catch(console.error)
 }
 
-const artistEventsController = {
-  getArtistEvents: getArtistEvents()
-}
 
-
-module.exports = artistEventsController;
+module.exports = getArtistEvents;
