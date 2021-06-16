@@ -1,12 +1,14 @@
-const cheerio = require('cheerio');
+const cheerio = require("cheerio");
 const puppeteer = require('puppeteer')
+const ArtistEvent = require('./models/artist_event.model')
 
 const url = 'https://www.wwoz.org/calendar/livewire-music'
 const config = {
   headers: {'Access-Control-Allow-Origin': '*'}
 }
 
-function getArtistEvents() {
+const getArtistEvents = async () => {
+
  puppeteer
   .launch()
   .then(browser => browser.newPage())
@@ -29,9 +31,14 @@ function getArtistEvents() {
         }
     });
     console.log(artist_events)
-    return artist_events
+
+    ArtistEvent.createArtistEvents(artist_events)
+    const artistEvents = ArtistEvent.all
+    
+    return artistEvents
   })
   .catch(console.error)
 }
 
-module.exports = getArtistEvents;
+getArtistEvents()
+// module.exports = getArtistEvents;
