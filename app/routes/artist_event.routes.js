@@ -1,4 +1,4 @@
-module.export = app => {
+module.exports = app => {
 
   const router = require('express').Router()
   const artistEventController = require('../controllers/artist_event.controller.js')
